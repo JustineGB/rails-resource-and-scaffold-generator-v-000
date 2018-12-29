@@ -247,3 +247,34 @@ Processing by ArticlesController#create as HTML
   [1m[35m (2.2ms)[0m  commit transaction
 Redirected to http://165.227.16.205:55995/articles/1
 Completed 302 Found in 9ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/articles/1" for 174.16.132.55 at 2018-12-29 13:37:41 +0000
+Cannot render console from 174.16.132.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered articles/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 25ms (Views: 16.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/1/edit" for 174.16.132.55 at 2018-12-29 13:37:43 +0000
+Cannot render console from 174.16.132.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered articles/_form.html.erb (1.7ms)
+  Rendered articles/edit.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/articles/1" for 174.16.132.55 at 2018-12-29 13:37:50 +0000
+Cannot render console from 174.16.132.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XMtyDY5AzDWZsqxzY3SsucK6E9Tf+pID7HvB6g0kHhm4+dOkm8uwOq1ytn867ayrfFjmHPZyyfyJcnJR08/bgw==", "article"=>{"title"=>"The New Article", "body"=>"dsvdvsdvsdvsdvsdvsdv\r\ne12e21e12e444444\r\n5555\r\n666"}, "commit"=>"Update Article", "id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "articles" SET "body" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["body", "dsvdvsdvsdvsdvsdvsdv\r\ne12e21e12e444444\r\n5555\r\n666"], ["updated_at", "2018-12-29 13:37:50.836568"], ["id", 1]]
+  [1m[35m (2.0ms)[0m  commit transaction
+Redirected to http://165.227.16.205:55995/articles/1
+Completed 302 Found in 6ms (ActiveRecord: 2.4ms)
